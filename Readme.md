@@ -1,12 +1,5 @@
 
-
-```markdown
-# RAG Chat Agent with Local LLM
-
-[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Ollama Required](https://img.shields.io/badge/Ollama-Required-important)](https://ollama.ai/)
-
+## RAG Chat Agent with Local LLM
 A privacy-focused chat agent that combines document analysis with local AI capabilities using Ollama models.
 
 ## Features
