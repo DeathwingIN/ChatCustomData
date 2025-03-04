@@ -1,4 +1,4 @@
-Here's comprehensive documentation in Markdown format following industry standards:
+
 
 ```markdown
 # RAG Chat Agent with Local LLM
@@ -81,7 +81,7 @@ streamlit run app/gui.py
    - 🔄 Refresh Knowledge Base: Reprocess documents
    - 🗑️ Clear Chat: Start new conversation
 
-![Interface Demo](assets/interface-demo.png) <!-- Add actual screenshot -->
+
 
 ## Deployment
 
@@ -177,31 +177,3 @@ MIT License - See [LICENSE](LICENSE) for details
 - [Ollama](https://ollama.ai/) for local LLM management
 - [LangChain](https://www.langchain.com/) for RAG pipeline
 - [ChromaDB](https://www.trychroma.com/) for vector storage
-```
-
-This documentation follows industry standards with:
-
-1. Clear installation instructions
-2. Configuration guidance
-3. Usage examples
-4. Deployment options
-5. Customization paths
-6. Troubleshooting section
-7. Contribution guidelines
-
-To use this documentation:
-1. Save as `README.md` in project root
-2. Create `requirements.txt` with:
-```
-streamlit
-langchain-community
-langchain-ollama
-chromadb
-unstructured
-python-magic-bin
-pypdf
-```
-3. Add license file
-4. Create `assets/` folder for screenshots
-
-Would you like me to explain any specific section in more detail or add additional sections?
