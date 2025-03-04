@@ -12,8 +12,8 @@ if "vector_db" not in st.session_state:
         st.session_state.vector_db = process_documents()
 
 def main():
-    st.title("RAG Chat Agent")
-    st.caption("Hybrid AI Assistant - Uses both general knowledge and your documents")
+    st.title("Test Chat Agent")
+    # st.caption("Hybrid AI Assistant - Uses both general knowledge and your documents")
     
     # Chat container
     chat_container = st.container()
