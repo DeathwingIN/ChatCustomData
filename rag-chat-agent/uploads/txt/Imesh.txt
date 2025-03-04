@@ -1,0 +1,90 @@
+Imesh Nirmal
+Final Year Undergraduate
+imeshnirmal1u@gmail.com +94 77 909 6293 Kurunegala, Sri Lanka.
+DeathwingIN /imesh-nirmal imeshnirmal.me
+@ImeshNirmal /imeshnirmal Imesh Nirmal
+PROFILE
+Motivated Software Engineering Seeking research supervision to explore the intersection of Machine Learning and Supply Chain
+Optimization. Aligning with my professional experience and academic goals.
+ EXPERIENCE
+2025 - Present Associate Microsoft Dynamics BC Technical Consultant
+Microcloud 360 Pvt Ltd
+• Collaborate with client teams to customize Business Central modules (Report generation,
+Code unit development) for enterprise resource planning solutions.
+• Implement Power Apps, Power BI, and Power Automate workflows to streamline data
+integration and dashboard visualization.
+• Optimize client workflows using Dataverse and Azure-based automation tools.
+2024 - 2025 Software Engineering Intern
+TX Solution Pvt Ltd
+• Developed full-stack web applications using React.js, TypeScript, and Tailwind CSS
+• Automated backend processes with n8n and integrated databases (Pocketbase, Superbase) for
+scalable data management.
+2022 - 2024 Video Editor | WordPress Developer
+Freelancer
+• Built WordPress sites with Elementor, HTML/CSS, and plugin integration.
+• Produced promotional and tutorial videos using Premiere Pro/After Effects for clients in
+diverse industries.
+EDUCATION
+Reading-2025
+BSc. (Hons) in Computing & Information Systems
+Sabaragamuwa University of Sri Lanka
+Current GPA – 3.16
+2021-2022
+Diploma in Software Engineering (DiSE)
+Esoft Metro Campus, Kurunegala
+2019
+Intermediate English Course
+British Council, Kandy
+2019
+GCE Advanced Level
+Royal College Wayamba
+PROJECTS
+2025 KDSJ International
+• Led front-end development using React.js and Tailwind CSS, incorporating N8n automation
+for workflow management.
+• Designed database schemas in Pocketbase and deployed the application easy pannel.
+React TS, Tailwind CSS, EmailJS
+2025 SDS Fixtures and Fittings
+• Developed Website using react ts
+• Integrated Emaijs for form submissions.
+• Use Hosgaitor for hosting and Godaddy for domain
+React TS, Tailwind CSS, EmailJS
+2024 Sinhala OCR | University Capstone Group Project
+My Responsibility
+• Developed middleware to connect backend and frontend systems.
+• Implemented signup and login functionalities.
+• Contributed to various front-end development tasks.
+React JS, CSS, Python, FastAPI, Firebase, Tailwind CSS
+RESEARCH INTERESTS
+• Machine Learning in Supply Chain Optimization
+• AI-Driven Process Automation
+CERTIFICATIONS
+Microsoft Certified: Azure Fundamental
+Microsoft | Jul 2022
+Microsoft Certified: Azure AI Fundamentals
+Microsoft | Sep 2021
+TECHNICAL SKILLS
+-- Programming Languages --
+JavaScript, TypeScript, AL, C/AL
+-- Databases --
+MySQL, MS SQL, Pocketbase
+-- Libraries | Frameworks --
+React, Boostrap, Tailwind CSS, MUI, Framer Motion, Laravel, React
+-- Tools & Technologies --
+Postman, AWS, Azure, GCP,Git (Version Control), Web Hosting Services, Adobe Creative Suite, WordPress, Figma,
+Trello, ClickUp
+EXTRACURRICULAR ACTIVITIES
+• Active member of the Society of Computer Science (SOCS) at Sabaragamuwa University of Sri Lanka
+• Member of the IEEE Student Branch at Sabaragamuwa University of Sri Lanka
+• Photographer for Sundara Bhelihuloya Media Crew at Sabaragamuwa University of Sri Lanka
+• Senior Prefect at Royal College Wayamba (2017-2018)
+REFERENCES
+Prof. B.T.G.S. Kumara
+Professor in Computer Science, Faculty of Computing,
+Sabaragamuwa University of Sri Lanka
++94 71 443 1192
+kumara@foc.sab.ac.lk
+Mr. R.W Pasindu Chathuranga
+Software engineer Chesalon Inc USA
++94 71 695 2574
+sgcreationspc@gmail.com

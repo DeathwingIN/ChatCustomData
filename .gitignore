@@ -1,0 +1,15 @@
+# Virtual environments
+venv/
+env/
+.vector_db/
+vector_db/
+
+# Python files
+/app/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Dependency files
+Pipfile.lock
+poetry.lock
