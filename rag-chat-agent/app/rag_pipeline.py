@@ -1,61 +1,57 @@
 from langchain.prompts import PromptTemplate
 from langchain_ollama import ChatOllama
 from langchain_core.output_parsers import StrOutputParser
-
-def should_use_rag(response_text):
-    """Determine if we need to consult RAG based on initial response"""
-    uncertainty_keywords = ["don't know", "not sure", "no information", "unclear"]
-    return any(keyword in response_text.lower() for keyword in uncertainty_keywords)
+from langchain_core.runnables import RunnablePassthrough
 
 def generate_response(query, vector_db):
-    """Hybrid response generator with chat memory"""
+    """Prioritize vector DB content while maintaining general knowledge"""
     try:
-        # Initialize core components
         llm = ChatOllama(
             model="deepseek-r1:1.5b",
-            temperature=0.7,
+            temperature=0.3,  # Lower temperature for more factual responses
             max_tokens=2000,
             num_ctx=4096
         )
         output_parser = StrOutputParser()
 
-        # First try base LLM response
-        base_template = """You are a helpful AI assistant. Answer this question:
-        Question: {question}
-        Answer:"""
+        # Always check vector DB first
+        if vector_db:
+            docs = vector_db.similarity_search(query, k=8)  # Increased context chunks
+            context = "\n\n".join([d.page_content for d in docs])
+            
+            # Enhanced prompt template
+            rag_template = """You must prioritize this context when answering:
+            Context: {context}
+            
+            Question: {question}
+            
+            If context is relevant:
+            - Give detailed response using context
+            - Never say "based on context"
+            - If needed, add general knowledge to enhance answer
+            
+            If context is irrelevant:
+            - Answer normally using your knowledge
+            """
+            
+            rag_prompt = PromptTemplate(
+                template=rag_template,
+                input_variables=["context", "question"]
+            )
+            
+            rag_chain = (
+                {"context": RunnablePassthrough(), "question": RunnablePassthrough()}
+                | rag_prompt
+                | llm
+                | output_parser
+            )
+            return rag_chain.invoke({"context": context, "question": query})
+        
+        # Fallback to general knowledge
+        base_template = """Answer this question: {question}"""
         base_prompt = PromptTemplate.from_template(base_template)
         base_chain = base_prompt | llm | output_parser
-        initial_response = base_chain.invoke({"question": query})
-        
-        # Check if RAG needed
-        if not vector_db or not should_use_rag(initial_response):
-            return initial_response
-        
-        # If RAG needed
-        docs = vector_db.similarity_search(query, k=5)
-        context = "\n\n".join([doc.page_content for doc in docs])
-        
-        # Enhanced RAG prompt
-        rag_template = """Answer the question combining your knowledge with this context:
-        Context: {context}
-        
-        Question: {question}
-        Your previous answer was: {initial_response}
-        Improve or confirm your answer using the context:"""
-        
-        rag_prompt = PromptTemplate(
-            template=rag_template,
-            input_variables=["context", "question", "initial_response"]
-        )
-        
-        rag_chain = rag_prompt | llm | output_parser
-        final_response = rag_chain.invoke({
-            "context": context,
-            "question": query,
-            "initial_response": initial_response
-        })
-        
-        return f"{final_response}\n\n(Source: Knowledge Base)"
+        return base_chain.invoke({"question": query})
     
     except Exception as e:
         return f"Error generating response: {str(e)}"

@@ -61,19 +61,23 @@ def main():
             with st.chat_message(message["role"]):
                 st.markdown(message["content"])
     
-    # Input handling
+   # Input handling
     if prompt := st.chat_input("Ask anything..."):
-        # Add user message to history
+        # Clear previous answer immediately
         st.session_state.chat_history.append({"role": "user", "content": prompt})
         
-        # Generate response
-        with st.spinner("Thinking..."):
-            response = generate_response(prompt, st.session_state.vector_db)
+        with st.spinner("Analyzing knowledge base..."):
+            try:
+                # Directly show context-based response
+                response = generate_response(prompt, st.session_state.vector_db)
+                st.session_state.chat_history.append({
+                    "role": "assistant", 
+                    "content": response
+                })
+                
+            except Exception as e:
+                st.error(f"Error processing request: {str(e)}")
         
-        # Add AI response to history
-        st.session_state.chat_history.append({"role": "assistant", "content": response})
-        
-        # Rerun to update display
         st.rerun()
 
 if __name__ == "__main__":
